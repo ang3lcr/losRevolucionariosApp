@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from "/logoHero.png"
 const Footer = () => {
   return (
-    <div className='flex justify-between items-center absolute bottom-100 w-full border-solid bg-neutral-900 mt-10'>
+    <div className='flex justify-between items-center absolute bottom-100 w-full border-solid bg-zinc-300 mt-10'>
       <img src={Logo} alt="" className='size-40 ml-20 p-2'/>
       <div className='flex justify-center items-center mr-20 flex-col'>
           <p className='font-sancreek text-white text-center mt-5 text-2xl'>Contacto: 4432324326</p>
