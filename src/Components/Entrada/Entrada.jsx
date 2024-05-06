@@ -1,6 +1,7 @@
 import React from 'react'
 import EspecialText from "../SpecialText/SpecialText"
-import Logo from "./heroMain2.png"
+import Logo from "/logoHero.png"
+
 
 
 const Entrada = () => {

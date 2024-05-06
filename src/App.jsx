@@ -4,8 +4,10 @@ import {HashRouter, Routes, Route} from 'react-router-dom'
 import Home from './Pages/Home'
 import Menu from './Pages/Menu'
 import Location from './Pages/Location'
-import SpecialText from './Components/SpecialText/SpecialText'
 import NavBar from './Components/NavBar/NavBar'
+
+
+
 
 function App() {
 
