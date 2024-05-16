@@ -42,7 +42,40 @@ const Menu = () => {
       }
       return null;
     })}
-    
+
+<div className='bg-slate-100 flex justify-center w-full md:w-2/3 flex-wrap'>
+  {categories.map(category => {
+    if(category.category !== "especialidad" && category.category !== "parrilla" && category.category !== "cocteles") {
+      return (
+        <section key={category.id} className='w-full md:w-1/2 bg-slate-50 mt-5'>
+          <p className='font-sancreek text-3xl md:text-4xl lg:text-5xl uppercase text-center'>
+            {category.category}
+          </p>
+          <ul className='mt-1'>
+            {food.map(e => {
+              if(e.foodCategory === category.id) {
+                return (
+                  <li key={e.id} className='pl-5'>
+                    <p className='font-akshar text-lg md:text-xl lg:text-2xl'>{e.name}</p>
+                  </li>
+                )
+              } else {
+                return null;
+              }
+            })}
+          </ul>
+        </section>
+      )
+    } else {
+      return null;
+    }
+  })}
+</div>
+
+
+
+
+
   </div>
       
   )
