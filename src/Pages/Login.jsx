@@ -1,21 +1,34 @@
 import React, { useState } from 'react';
 import LogoPrincipal from "../../public/logo.jpeg";
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
-  const [condicionesAceptadas, setCondicionesAceptadas] = useState(false);
+  const [username, setUserName] = useState('')
+  const [password, setPassword] = useState('')
 
-  const cambiarCondiciones = (event) => {
-    setCondicionesAceptadas(event.target.checked);
-    console.log('Condiciones aceptadas:', event.target.checked);
-  };
+  const navigate = useNavigate();
+
+
+  const submit = () => {
+    let data = {
+      "username": username,
+      "password": password
+    }
+    axios.post("https://losrevolucionariosapi.onrender.com/api/v1/auth/login",data).then(res => {
+      localStorage.setItem("token", res.data.token);
+      navigate("/admin");
+    })
+  }
 
   return (
     <div className="bg-red-700 min-h-screen flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md w-80">
-        <div className="flex justify-center mb-8">
+      <div className="bg-white p-8 rounded-lg shadow-md w-80 flex flex-col">
+        <div className="flex justify-center mb-8 items-center">
           <img src={LogoPrincipal} alt="Logo" className="h-20" />
         </div>
-        <h1 className="text-xl font-semibold mb-6">Iniciar Sesión</h1>
+        <h1 className="text-xl font-semibold mb-6 text-center">Iniciar Sesión</h1>
         <div className="text-center">
           <div className="mb-4">
             <input
@@ -23,6 +36,7 @@ const Login = () => {
               className="login-field"
               placeholder="Usuario"
               id="login-name"
+              onChange={(e) => setUserName(e.target.value)}
             />
           </div>
           <div className="mb-4">
@@ -31,24 +45,12 @@ const Login = () => {
               className="login-field"
               placeholder="Contraseña"
               id="login-pass"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button className="btn btn-primary btn-large btn-block mb-4">
+          <button className="btn btn-primary btn-large btn-block mb-4" onClick={() => submit()}>
             Iniciar Sesión
           </button>
-          <label htmlFor="condiciones" className="block mb-4">
-            <input
-              type="checkbox"
-              id="condiciones"
-              name="condiciones"
-              className="mr-2"
-              onChange={cambiarCondiciones}
-            />
-            Estoy de acuerdo con los <a href="#" className="underline">términos y condiciones</a>.
-          </label>
-          <a href="#" className="text-sm text-gray-700 block mb-4">
-            ¿Perdiste tu contraseña?
-          </a>
         </div>
       </div>
     </div>

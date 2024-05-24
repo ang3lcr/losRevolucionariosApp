@@ -19,15 +19,16 @@ const CategoryForm = () => {
 
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
-  <div className="bg-gray-600 p-6 rounded-lg w-1/3">
-    <form onSubmit={submit} className="space-y-4">
+    <div className="flex items-center justify-center w-1/2">
+      <div className="bg-gray-600 p-6 rounded-lg h-2/4 w-2/4 flex flex-col justify-center items-center">
+        <h1 className='text-3xl text-white'>Categorias</h1>
+        <form onSubmit={submit} className="space-y-4">
       <input
         onChange={(e) => setFile(e.target.files[0])}
         type="file"
         accept="image/*"
         name="image"
-        className="w-full bg-gray-800 text-white p-2 rounded"
+        className="w-full bg-gray-800 text-white p-2 rounded mt-5"
       />
       <input
         value={category}

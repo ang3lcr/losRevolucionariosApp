@@ -8,6 +8,8 @@ import NavBar from './Components/NavBar/NavBar'
 import CategoryForm from './Components/Form/CategoryForm'
 import FoodForm from './Components/Form/FoodForm'
 import Login from './Pages/Login'
+import Admin from './Pages/Admin'
+import ProtectedRoutes from './Components/ProtectedRoutes/ProtectedRoutes'
 
 
 
@@ -23,9 +25,13 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/menu" element={<Menu />}/>
         <Route path="/location" element={<Location />}/>
-        <Route path="/categories" element={<CategoryForm />}/>
-        <Route path="/food" element={<FoodForm />}/>
         <Route path="/login" element={<Login />}/>
+        <Route path="/admin" element={<Admin />}/>
+
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/food" element={<FoodForm />}/>
+          <Route path="/categories" element={<CategoryForm />}/>
+        </Route>
       </Routes>
     </HashRouter>
 

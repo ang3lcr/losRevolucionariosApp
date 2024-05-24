@@ -12,8 +12,10 @@ const Menu = () => {
     axios.get("https://losrevolucionariosapi.onrender.com/api/v1/food")
       .then(res => setFood(res.data))
   },[])
+  
+  
+  
   return (
-
     <div className='bg-slate-100 flex flex-col justify-center items-center w-full'>
     {categories.map(category => {
       if(category.category === "especialidad" || category.category === "parrilla" || category.category === "cocteles") {

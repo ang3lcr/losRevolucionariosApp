@@ -27,7 +27,6 @@ const FoodForm = () => {
     }
     axios.post("https://losrevolucionariosapi.onrender.com/api/v1/food",data).then(res => console.log(res))
     setIngredients([])
-    // console.log(data)
 }
 
   const addIngredient = () => {
@@ -39,22 +38,19 @@ const FoodForm = () => {
     setCurrentIngredient("")
   }
 
-
-
   return (
-    <div className='w-full h-screen flex justify-center items-center inset-0 flex-col bg-slate-400'>
-      <div className='flex flex-col  h-2/4 w-2/4 bg-slate-50 items-center justify-center'>
-      <input type="text" placeholder='Nombre del platillo' className='m-5 w-60' onChange={(e) => setName(e.target.value)}/>
-        
-        <select name="" id="" className='m-5 w-60' onChange={(e) => setCategory(e.target.value)}>
+    <div className='flex items-center justify-center w-1/2'>
+      <div className='bg-gray-600 p-6 rounded-lg w-2/4 flex justify-center flex-col items-center gap-5'>
+      <h1 className='text-3xl text-white'>Platillos</h1>
+      <input type="text" placeholder='Nombre del platillo' className='w-full bg-gray-800 text-white p-2 rounded' onChange={(e) => setName(e.target.value)}/>
+        <select name="" id="" className='m-5 w-full' onChange={(e) => setCategory(e.target.value)}>
           {categories.map(category => (
             <option value={category.id} key={category.id}>{category.category.charAt(0).toUpperCase()+category.category.slice(1)}</option>
           ))}
         </select>
-      
       <div className='flex justify-center flex-col'>
         <div className='flex justify-center'>
-          <input type="text" className='m-5 w-52' value={currentIngredient} placeholder='Ingredientes' onChange={(e) => setCurrentIngredient(e.target.value)}/>
+          <input type="text" className='w-full bg-gray-800 text-white p-2 rounded m-5' value={currentIngredient} placeholder='Ingredientes' onChange={(e) => setCurrentIngredient(e.target.value)}/>
           <button onClick={() => addIngredient()}>Add</button>
         </div>
         <ul className='flex justify-center w-full max-w-full min-h-20 flex-wrap'>
@@ -63,12 +59,10 @@ const FoodForm = () => {
           ))}
         </ul>
       </div>
-
-      <button className='relative left-0 -bottom-2 border-solid border-2 border-red-700 p-2 rounded-xl m-2 w-fit hover:bg-red-700 hover:text-green-500 text-xl text-center flex justify-center items-center h-fit' onClick={() => submit()}>Submit</button>
+      <button className='relative left-0  border-solid border-2 border-red-700 p-2 rounded-xl m-2 w-fit hover:bg-red-700 hover:text-green-500 text-xl text-center flex justify-center items-center h-fit' onClick={() => submit()}>Submit</button>
       </div>
     </div>
   )
-    
 }
 
 export default FoodForm
