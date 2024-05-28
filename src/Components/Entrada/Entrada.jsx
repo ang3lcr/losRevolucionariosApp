@@ -2,6 +2,7 @@ import React from 'react'
 import EspecialText from "../SpecialText/SpecialText"
 import Logo from "/logoHero.png"
 
+
 const Entrada = () => {
   return (
     <div className='flex flex-col justify-center items-center'>

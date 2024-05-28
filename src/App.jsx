@@ -9,7 +9,7 @@ import FoodForm from './Components/Form/FoodForm'
 import Login from './Pages/Login'
 import Admin from './Pages/Admin'
 import ProtectedRoutes from './Components/ProtectedRoutes/ProtectedRoutes'
-import Location from './Pages/Location/Location'
+import Location from './Pages/Location/'
 
 
 

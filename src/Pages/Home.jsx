@@ -8,7 +8,7 @@ import Footer from '../Components/Footer/Footer'
 const Home = () => {
   return (
     <div className='w-full h-screen'>
-        <img src={Hero} alt="" className='object-none w-screen h-screen'/>
+        <img src={Hero} alt="" className='object-none w-full h-screen bg-cover min-h-screen'/>
         <Entrada />
         <Desarrollo />
         <Diferencias />
