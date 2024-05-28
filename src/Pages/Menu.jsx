@@ -3,6 +3,10 @@ import axios from 'axios'
 import SpecialText from "../Components/SpecialText/SpecialText"
 
 
+
+
+
+
 const Menu = () => {
   const [categories, setCategories] = useState([])
   const [food, setFood] = useState([])
@@ -72,13 +76,8 @@ const Menu = () => {
       return null;
     }
   })}
-</div>
-
-
-
-
-
   </div>
+</div>
       
   )
 }

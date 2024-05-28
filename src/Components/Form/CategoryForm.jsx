@@ -19,7 +19,7 @@ const CategoryForm = () => {
 
 
   return (
-    <div className="flex items-center justify-center w-1/2">
+    <div className="flex items-center justify-center">
       <div className="bg-gray-600 p-6 rounded-lg h-2/4 w-2/4 flex flex-col justify-center items-center">
         <h1 className='text-3xl text-white'>Categorias</h1>
         <form onSubmit={submit} className="space-y-4">

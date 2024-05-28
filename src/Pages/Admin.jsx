@@ -4,7 +4,7 @@ import FoodForm from '../Components/Form/FoodForm'
 
 const Admin = () => {
   return (
-    <div className='flex justify-center h-screen'>
+    <div className='flex justify-center h-screen flex-wrap'>
         <CategoryForm />
         <FoodForm />
     </div>

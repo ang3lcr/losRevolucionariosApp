@@ -39,8 +39,8 @@ const FoodForm = () => {
   }
 
   return (
-    <div className='flex items-center justify-center w-1/2'>
-      <div className='bg-gray-600 p-6 rounded-lg w-2/4 flex justify-center flex-col items-center gap-5'>
+    <div className='flex items-center justify-center'>
+      <div className='bg-gray-600 p-6 rounded-lg flex justify-center flex-col items-center gap-5'>
       <h1 className='text-3xl text-white'>Platillos</h1>
       <input type="text" placeholder='Nombre del platillo' className='w-full bg-gray-800 text-white p-2 rounded' onChange={(e) => setName(e.target.value)}/>
         <select name="" id="" className='m-5 w-full' onChange={(e) => setCategory(e.target.value)}>

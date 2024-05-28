@@ -1,0 +1,32 @@
+.location-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .rectangle {
+    width: 1454px;
+    height: 160px; /* Altura del cuadro */
+    background: #000000;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Akshar', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 44px;
+    color: #FFFFFF;
+    margin-bottom: 81px; /* Espacio hacia abajo */
+    margin-top: 200px; /* Ajusta el margen superior para evitar que se solape con el navbar */
+  }
+  
+  .location-image {
+    width: 1454px;
+    height: 500px; /* Altura deseada de la imagen */
+  }
+  
