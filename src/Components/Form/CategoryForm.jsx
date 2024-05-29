@@ -12,8 +12,8 @@ const CategoryForm = () => {
     const formData = new FormData();
     formData.append("image", file)
     formData.append("category", category)
-    await axios.post("http://localhost:8000/api/v1/categories", formData, { headers: {'Content-Type': 'multipart/form-data'}})
-    // await axios.post("https://losrevolucionariosapi.onrender.com/api/v1/categories/", formData, { headers: {'Content-Type': 'multipart/form-data'}})
+    // await axios.post("http://localhost:8000/api/v1/categories", formData, { headers: {'Content-Type': 'multipart/form-data'}})
+    await axios.post("https://losrevolucionariosapi.onrender.com/api/v1/categories/", formData, { headers: {'Content-Type': 'multipart/form-data'}})
     alert("Categoria creada")
   }
 

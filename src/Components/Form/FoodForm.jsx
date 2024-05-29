@@ -14,8 +14,8 @@ const FoodForm = () => {
 
 
   useEffect(() => {
-    // axios.get("https://losrevolucionariosapi.onrender.com/api/v1/categories").then(res => setCategories(res.data))
-    axios.get("http://localhost:8000/api/v1/categories").then(res => setCategories(res.data))
+    axios.get("https://losrevolucionariosapi.onrender.com/api/v1/categories").then(res => setCategories(res.data))
+    // axios.get("http://localhost:8000/api/v1/categories").then(res => setCategories(res.data))
   }, [])
 
   
@@ -26,8 +26,8 @@ const FoodForm = () => {
       "foodCategory": category,
       "ingredients": ingredientsArray.join()
     }
-    // axios.post("https://losrevolucionariosapi.onrender.com/api/v1/food",data).then(res => console.log(res))
-    axios.post("http://localhost:8000/api/v1/food",data).then(res => console.log(res))
+    axios.post("https://losrevolucionariosapi.onrender.com/api/v1/food",data).then(res => console.log(res))
+    // axios.post("http://localhost:8000/api/v1/food",data).then(res => console.log(res))
     setIngredients([])
 }
 
