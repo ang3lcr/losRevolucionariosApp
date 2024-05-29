@@ -11,9 +11,11 @@ const Menu = () => {
   const [categories, setCategories] = useState([])
   const [food, setFood] = useState([])
   useEffect(() => {
-    axios.get("https://losrevolucionariosapi.onrender.com/api/v1/categories")
+    axios.get("http://localhost:8000/api/v1/categories")
+    // axios.get("https://losrevolucionariosapi.onrender.com/api/v1/categories")
       .then(res => setCategories(res.data))
-    axios.get("https://losrevolucionariosapi.onrender.com/api/v1/food")
+    // axios.get("https://losrevolucionariosapi.onrender.com/api/v1/food")
+    axios.get("http://localhost:8000/api/v1/food")
       .then(res => setFood(res.data))
   },[])
   

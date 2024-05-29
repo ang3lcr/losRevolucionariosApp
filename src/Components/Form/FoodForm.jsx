@@ -14,7 +14,8 @@ const FoodForm = () => {
 
 
   useEffect(() => {
-    axios.get("https://losrevolucionariosapi.onrender.com/api/v1/categories").then(res => setCategories(res.data))
+    // axios.get("https://losrevolucionariosapi.onrender.com/api/v1/categories").then(res => setCategories(res.data))
+    axios.get("http://localhost:8000/api/v1/categories").then(res => setCategories(res.data))
   }, [])
 
   
@@ -25,7 +26,8 @@ const FoodForm = () => {
       "foodCategory": category,
       "ingredients": ingredientsArray.join()
     }
-    axios.post("https://losrevolucionariosapi.onrender.com/api/v1/food",data).then(res => console.log(res))
+    // axios.post("https://losrevolucionariosapi.onrender.com/api/v1/food",data).then(res => console.log(res))
+    axios.post("http://localhost:8000/api/v1/food",data).then(res => console.log(res))
     setIngredients([])
 }
 
@@ -40,7 +42,7 @@ const FoodForm = () => {
 
   return (
     <div className='flex items-center justify-center'>
-      <div className='bg-gray-600 p-6 rounded-lg flex justify-center flex-col items-center gap-5'>
+      <div className='bg-gray-600 p-2 rounded-lg flex justify-center flex-col items-center gap-1'>
       <h1 className='text-3xl text-white'>Platillos</h1>
       <input type="text" placeholder='Nombre del platillo' className='w-full bg-gray-800 text-white p-2 rounded' onChange={(e) => setName(e.target.value)}/>
         <select name="" id="" className='m-5 w-full' onChange={(e) => setCategory(e.target.value)}>
